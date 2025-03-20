@@ -1,3 +1,6 @@
+//armazena todas as teclas em uma lista
+const listaTeclas = document.querySelectorAll('.tecla');
+
 //identifica uma tag audio pelo id e reproduz o som
 function reproduzirSom(){
     classTecla = gerarIdSomTecla(this.className);
@@ -11,10 +14,15 @@ function gerarIdSomTecla(classTecla){
     return idTecla;
 }
 
-//armazena todas as teclas em uma lista
-const listaTeclas = document.querySelectorAll('.tecla');
-
 //atribui a função reproduzirSom ao onclick de todos os botões
 listaTeclas.forEach(tecla => {
     tecla.onclick = reproduzirSom;
+
+    tecla.onkeydown = function () {
+        tecla.classList.add('ativa')
+    }
+    
+    tecla.onkeyup = function(){
+        tecla.classList.remove('ativa');
+    }
 });
