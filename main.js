@@ -18,10 +18,17 @@ function gerarIdSomTecla(classTecla){
 listaTeclas.forEach(tecla => {
     tecla.onclick = reproduzirSom;
 
-    tecla.onkeydown = function () {
-        tecla.classList.add('ativa')
+    tecla.onkeydown = function (evento) {
+        console.log(evento.code);
+        if(evento.code === 'Space'){
+            tecla.classList.add('ativa');
+        }
+        
+        if(evento.code === 'Enter'){
+            tecla.classList.add('ativa');
+        }
     }
-    
+
     tecla.onkeyup = function(){
         tecla.classList.remove('ativa');
     }
