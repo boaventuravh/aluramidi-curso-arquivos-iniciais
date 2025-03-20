@@ -24,9 +24,6 @@ listaTeclas.forEach(tecla => {
             tecla.classList.add('ativa');
         }
         
-        if(evento.code === 'Enter'){
-            tecla.classList.add('ativa');
-        }
     }
 
     tecla.onkeyup = function(){
